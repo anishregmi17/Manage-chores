@@ -23,7 +23,6 @@ class TaskController extends Controller
         $request->validate([
             'title' => 'required|string|max:255',
         ]);
-
         Task::create($request->all());
         return redirect()->route('tasks.index')->with('success', 'Task created successfully.');
     }
